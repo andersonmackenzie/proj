@@ -1,0 +1,320 @@
+package br.com.View;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.JTextField;
+
+import org.jdesktop.beansbinding.AutoBinding;
+import org.jdesktop.beansbinding.BeanProperty;
+import org.jdesktop.beansbinding.BindingGroup;
+import org.jdesktop.beansbinding.Bindings;
+
+public class Teste extends JDialog {
+
+	private BindingGroup m_bindingGroup;
+	private JPanel m_contentPane;
+	private br.com.entidade.Usuario usuario = new br.com.entidade.Usuario();
+	private JTextField classJTextField;
+	private JSlider codUsuarioJSlider;
+	private JTextField cpfJTextField;
+	private JTextField curriculoJTextField;
+	private JTextField dataCriacaoJTextField;
+	private JTextField enderecoJTextField;
+	private JTextField loginJTextField;
+	private JTextField nomeJTextField;
+	private JTextField telefonesJTextField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			Teste dialog = new Teste();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Teste() {
+		setBounds(100, 100, 450, 300);
+		m_contentPane = new JPanel();
+		setContentPane(m_contentPane);
+		//
+		GridBagLayout gridBagLayout = new GridBagLayout();
+		gridBagLayout.columnWidths = new int[] { 0, 0, 0 };
+		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		gridBagLayout.columnWeights = new double[] { 0.0, 1.0, 1.0E-4 };
+		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+				0.0, 0.0, 0.0, 1.0E-4 };
+		m_contentPane.setLayout(gridBagLayout);
+
+		JLabel classLabel = new JLabel("Class:");
+		GridBagConstraints labelGbc_0 = new GridBagConstraints();
+		labelGbc_0.insets = new Insets(5, 5, 5, 5);
+		labelGbc_0.gridx = 0;
+		labelGbc_0.gridy = 0;
+		m_contentPane.add(classLabel, labelGbc_0);
+
+		classJTextField = new JTextField();
+		GridBagConstraints componentGbc_0 = new GridBagConstraints();
+		componentGbc_0.insets = new Insets(5, 0, 5, 5);
+		componentGbc_0.fill = GridBagConstraints.HORIZONTAL;
+		componentGbc_0.gridx = 1;
+		componentGbc_0.gridy = 0;
+		m_contentPane.add(classJTextField, componentGbc_0);
+
+		JLabel codUsuarioLabel = new JLabel("CodUsuario:");
+		GridBagConstraints labelGbc_1 = new GridBagConstraints();
+		labelGbc_1.insets = new Insets(5, 5, 5, 5);
+		labelGbc_1.gridx = 0;
+		labelGbc_1.gridy = 1;
+		m_contentPane.add(codUsuarioLabel, labelGbc_1);
+
+		codUsuarioJSlider = new JSlider();
+		GridBagConstraints componentGbc_1 = new GridBagConstraints();
+		componentGbc_1.insets = new Insets(5, 0, 5, 5);
+		componentGbc_1.fill = GridBagConstraints.HORIZONTAL;
+		componentGbc_1.gridx = 1;
+		componentGbc_1.gridy = 1;
+		m_contentPane.add(codUsuarioJSlider, componentGbc_1);
+
+		JLabel cpfLabel = new JLabel("Cpf:");
+		GridBagConstraints labelGbc_2 = new GridBagConstraints();
+		labelGbc_2.insets = new Insets(5, 5, 5, 5);
+		labelGbc_2.gridx = 0;
+		labelGbc_2.gridy = 2;
+		m_contentPane.add(cpfLabel, labelGbc_2);
+
+		cpfJTextField = new JTextField();
+		GridBagConstraints componentGbc_2 = new GridBagConstraints();
+		componentGbc_2.insets = new Insets(5, 0, 5, 5);
+		componentGbc_2.fill = GridBagConstraints.HORIZONTAL;
+		componentGbc_2.gridx = 1;
+		componentGbc_2.gridy = 2;
+		m_contentPane.add(cpfJTextField, componentGbc_2);
+
+		JLabel curriculoLabel = new JLabel("Curriculo:");
+		GridBagConstraints labelGbc_3 = new GridBagConstraints();
+		labelGbc_3.insets = new Insets(5, 5, 5, 5);
+		labelGbc_3.gridx = 0;
+		labelGbc_3.gridy = 3;
+		m_contentPane.add(curriculoLabel, labelGbc_3);
+
+		curriculoJTextField = new JTextField();
+		GridBagConstraints componentGbc_3 = new GridBagConstraints();
+		componentGbc_3.insets = new Insets(5, 0, 5, 5);
+		componentGbc_3.fill = GridBagConstraints.HORIZONTAL;
+		componentGbc_3.gridx = 1;
+		componentGbc_3.gridy = 3;
+		m_contentPane.add(curriculoJTextField, componentGbc_3);
+
+		JLabel dataCriacaoLabel = new JLabel("DataCriacao:");
+		GridBagConstraints labelGbc_4 = new GridBagConstraints();
+		labelGbc_4.insets = new Insets(5, 5, 5, 5);
+		labelGbc_4.gridx = 0;
+		labelGbc_4.gridy = 4;
+		m_contentPane.add(dataCriacaoLabel, labelGbc_4);
+
+		dataCriacaoJTextField = new JTextField();
+		GridBagConstraints componentGbc_4 = new GridBagConstraints();
+		componentGbc_4.insets = new Insets(5, 0, 5, 5);
+		componentGbc_4.fill = GridBagConstraints.HORIZONTAL;
+		componentGbc_4.gridx = 1;
+		componentGbc_4.gridy = 4;
+		m_contentPane.add(dataCriacaoJTextField, componentGbc_4);
+
+		JLabel enderecoLabel = new JLabel("Endereco:");
+		GridBagConstraints labelGbc_5 = new GridBagConstraints();
+		labelGbc_5.insets = new Insets(5, 5, 5, 5);
+		labelGbc_5.gridx = 0;
+		labelGbc_5.gridy = 5;
+		m_contentPane.add(enderecoLabel, labelGbc_5);
+
+		enderecoJTextField = new JTextField();
+		GridBagConstraints componentGbc_5 = new GridBagConstraints();
+		componentGbc_5.insets = new Insets(5, 0, 5, 5);
+		componentGbc_5.fill = GridBagConstraints.HORIZONTAL;
+		componentGbc_5.gridx = 1;
+		componentGbc_5.gridy = 5;
+		m_contentPane.add(enderecoJTextField, componentGbc_5);
+
+		JLabel loginLabel = new JLabel("Login:");
+		GridBagConstraints labelGbc_6 = new GridBagConstraints();
+		labelGbc_6.insets = new Insets(5, 5, 5, 5);
+		labelGbc_6.gridx = 0;
+		labelGbc_6.gridy = 6;
+		m_contentPane.add(loginLabel, labelGbc_6);
+
+		loginJTextField = new JTextField();
+		GridBagConstraints componentGbc_6 = new GridBagConstraints();
+		componentGbc_6.insets = new Insets(5, 0, 5, 5);
+		componentGbc_6.fill = GridBagConstraints.HORIZONTAL;
+		componentGbc_6.gridx = 1;
+		componentGbc_6.gridy = 6;
+		m_contentPane.add(loginJTextField, componentGbc_6);
+
+		JLabel nomeLabel = new JLabel("Nome:");
+		GridBagConstraints labelGbc_7 = new GridBagConstraints();
+		labelGbc_7.insets = new Insets(5, 5, 5, 5);
+		labelGbc_7.gridx = 0;
+		labelGbc_7.gridy = 7;
+		m_contentPane.add(nomeLabel, labelGbc_7);
+
+		nomeJTextField = new JTextField();
+		GridBagConstraints componentGbc_7 = new GridBagConstraints();
+		componentGbc_7.insets = new Insets(5, 0, 5, 5);
+		componentGbc_7.fill = GridBagConstraints.HORIZONTAL;
+		componentGbc_7.gridx = 1;
+		componentGbc_7.gridy = 7;
+		m_contentPane.add(nomeJTextField, componentGbc_7);
+
+		JLabel telefonesLabel = new JLabel("Telefones:");
+		GridBagConstraints labelGbc_8 = new GridBagConstraints();
+		labelGbc_8.insets = new Insets(5, 5, 5, 5);
+		labelGbc_8.gridx = 0;
+		labelGbc_8.gridy = 8;
+		m_contentPane.add(telefonesLabel, labelGbc_8);
+
+		telefonesJTextField = new JTextField();
+		GridBagConstraints componentGbc_8 = new GridBagConstraints();
+		componentGbc_8.insets = new Insets(5, 0, 5, 5);
+		componentGbc_8.fill = GridBagConstraints.HORIZONTAL;
+		componentGbc_8.gridx = 1;
+		componentGbc_8.gridy = 8;
+		m_contentPane.add(telefonesJTextField, componentGbc_8);
+
+		if (usuario != null) {
+			m_bindingGroup = initDataBindings();
+		}
+	}
+
+	protected BindingGroup initDataBindings() {
+		BeanProperty<br.com.entidade.Usuario, java.lang.Class> classProperty = BeanProperty
+				.create("class");
+		BeanProperty<javax.swing.JTextField, java.lang.String> textProperty = BeanProperty
+				.create("text");
+		AutoBinding<br.com.entidade.Usuario, java.lang.Class, javax.swing.JTextField, java.lang.String> autoBinding = Bindings
+				.createAutoBinding(AutoBinding.UpdateStrategy.READ, usuario,
+						classProperty, classJTextField, textProperty);
+		autoBinding.bind();
+		//
+		BeanProperty<br.com.entidade.Usuario, java.lang.Integer> codUsuarioProperty = BeanProperty
+				.create("codUsuario");
+		BeanProperty<javax.swing.JSlider, java.lang.Integer> valueProperty = BeanProperty
+				.create("value");
+		AutoBinding<br.com.entidade.Usuario, java.lang.Integer, javax.swing.JSlider, java.lang.Integer> autoBinding_1 = Bindings
+				.createAutoBinding(AutoBinding.UpdateStrategy.READ, usuario,
+						codUsuarioProperty, codUsuarioJSlider, valueProperty);
+		autoBinding_1.bind();
+		//
+		BeanProperty<br.com.entidade.Usuario, java.lang.String> cpfProperty = BeanProperty
+				.create("cpf");
+		BeanProperty<javax.swing.JTextField, java.lang.String> textProperty_1 = BeanProperty
+				.create("text");
+		AutoBinding<br.com.entidade.Usuario, java.lang.String, javax.swing.JTextField, java.lang.String> autoBinding_2 = Bindings
+				.createAutoBinding(AutoBinding.UpdateStrategy.READ, usuario,
+						cpfProperty, cpfJTextField, textProperty_1);
+		autoBinding_2.bind();
+		//
+		BeanProperty<br.com.entidade.Usuario, br.com.entidade.Curriculo> curriculoProperty = BeanProperty
+				.create("curriculo");
+		BeanProperty<javax.swing.JTextField, java.lang.String> textProperty_2 = BeanProperty
+				.create("text");
+		AutoBinding<br.com.entidade.Usuario, br.com.entidade.Curriculo, javax.swing.JTextField, java.lang.String> autoBinding_3 = Bindings
+				.createAutoBinding(AutoBinding.UpdateStrategy.READ, usuario,
+						curriculoProperty, curriculoJTextField, textProperty_2);
+		autoBinding_3.bind();
+		//
+		BeanProperty<br.com.entidade.Usuario, java.util.Date> dataCriacaoProperty = BeanProperty
+				.create("dataCriacao");
+		BeanProperty<javax.swing.JTextField, java.lang.String> textProperty_3 = BeanProperty
+				.create("text");
+		AutoBinding<br.com.entidade.Usuario, java.util.Date, javax.swing.JTextField, java.lang.String> autoBinding_4 = Bindings
+				.createAutoBinding(AutoBinding.UpdateStrategy.READ, usuario,
+						dataCriacaoProperty, dataCriacaoJTextField,
+						textProperty_3);
+		autoBinding_4.bind();
+		//
+		BeanProperty<br.com.entidade.Usuario, br.com.entidade.Endereco> enderecoProperty = BeanProperty
+				.create("endereco");
+		BeanProperty<javax.swing.JTextField, java.lang.String> textProperty_4 = BeanProperty
+				.create("text");
+		AutoBinding<br.com.entidade.Usuario, br.com.entidade.Endereco, javax.swing.JTextField, java.lang.String> autoBinding_5 = Bindings
+				.createAutoBinding(AutoBinding.UpdateStrategy.READ, usuario,
+						enderecoProperty, enderecoJTextField, textProperty_4);
+		autoBinding_5.bind();
+		//
+		BeanProperty<br.com.entidade.Usuario, br.com.entidade.Login> loginProperty = BeanProperty
+				.create("login");
+		BeanProperty<javax.swing.JTextField, java.lang.String> textProperty_5 = BeanProperty
+				.create("text");
+		AutoBinding<br.com.entidade.Usuario, br.com.entidade.Login, javax.swing.JTextField, java.lang.String> autoBinding_6 = Bindings
+				.createAutoBinding(AutoBinding.UpdateStrategy.READ, usuario,
+						loginProperty, loginJTextField, textProperty_5);
+		autoBinding_6.bind();
+		//
+		BeanProperty<br.com.entidade.Usuario, java.lang.String> nomeProperty = BeanProperty
+				.create("nome");
+		BeanProperty<javax.swing.JTextField, java.lang.String> textProperty_6 = BeanProperty
+				.create("text");
+		AutoBinding<br.com.entidade.Usuario, java.lang.String, javax.swing.JTextField, java.lang.String> autoBinding_7 = Bindings
+				.createAutoBinding(AutoBinding.UpdateStrategy.READ, usuario,
+						nomeProperty, nomeJTextField, textProperty_6);
+		autoBinding_7.bind();
+		//
+		BeanProperty<br.com.entidade.Usuario, java.util.List> telefonesProperty = BeanProperty
+				.create("telefones");
+		BeanProperty<javax.swing.JTextField, java.lang.String> textProperty_7 = BeanProperty
+				.create("text");
+		AutoBinding<br.com.entidade.Usuario, java.util.List, javax.swing.JTextField, java.lang.String> autoBinding_8 = Bindings
+				.createAutoBinding(AutoBinding.UpdateStrategy.READ, usuario,
+						telefonesProperty, telefonesJTextField, textProperty_7);
+		autoBinding_8.bind();
+		//
+		BindingGroup bindingGroup = new BindingGroup();
+		bindingGroup.addBinding(autoBinding);
+		bindingGroup.addBinding(autoBinding_1);
+		bindingGroup.addBinding(autoBinding_2);
+		bindingGroup.addBinding(autoBinding_3);
+		bindingGroup.addBinding(autoBinding_4);
+		bindingGroup.addBinding(autoBinding_5);
+		bindingGroup.addBinding(autoBinding_6);
+		bindingGroup.addBinding(autoBinding_7);
+		bindingGroup.addBinding(autoBinding_8);
+		//
+		return bindingGroup;
+	}
+
+	public br.com.entidade.Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(br.com.entidade.Usuario newUsuario) {
+		setUsuario(newUsuario, true);
+	}
+
+	public void setUsuario(br.com.entidade.Usuario newUsuario, boolean update) {
+		usuario = newUsuario;
+		if (update) {
+			if (m_bindingGroup != null) {
+				m_bindingGroup.unbind();
+				m_bindingGroup = null;
+			}
+			if (usuario != null) {
+				m_bindingGroup = initDataBindings();
+			}
+		}
+	}
+
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Busca de Vagas</title>
+<link rel="stylesheet" href="stylesheets/base.css" type="text/css"
+	media="screen" />
+<link rel="stylesheet" href="stylesheets/themes/default/style.css"
+	type="text/css" media="screen" />
+
+
+</h:head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1 style="text-align: center; color: blue;">Gerenciador de
+				Curriculos</h1>
+			<div id="user-navigation">
+				<ul class="wat-cf">
+
+
+					<li><a class="logout" href="#">Logout</a></li>
+				</ul>
+			</div>
+			<div id="main-navigation">
+				<br /> <br />
+			</div>
+		</div>
+		<div id="wrapper" class="wat-cf">
+			<div id="main">
+
+				<div class="block" id="block-forms">
+					<div class="secondary-navigation">
+						<ul class="wat-cf">
+							<li class="active first"><a href="#block-text">item 1</a></li>
+							<li><a href="#block-tables">item 2</a></li>
+							<li><a href="#block-forms">item 3</a></li>
+							<li><a href="#block-messages">item 4</a></li>
+							<li><a href="#block-forms-2">item 5</a></li>
+							<li><a href="#block-lists">item 6</a></li>
+						</ul>
+					</div>
+					<div class="content">
+						<br />
+						<h2 class="title" style="text-align: center;">Busca de Vagas</h2>
+						<div class="inner">
+							<div style="text-align: center;">
+
+								<form action="">
+									<div class="group">
+										<div class="fieldWithErrors">
+											<label class="label" for="post_title">Área
+												Profissional?</label> <span class="error"></span>
+										</div>
+										<select style="width: 180px;">
+											<option></option>
+
+										</select>
+									</div>
+									<div class="group" style="margin-top: 10px">
+										<div class="fieldWithErrors">
+											<label class="label" for="post_title">Área
+												Profissional?</label> <span class="error"></span>
+										</div>
+										<select style="width: 180px;">
+											<option></option>
+
+										</select>
+									</div>
+									<div class="group"
+										style="margin-top: 20px; margin-bottom: 150px;">
+										<button type="button" style="width: 73px; height: 34px;">Procurar</button>
+									</div>
+								</form>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div id="footer">
+					<div class="block">
+						<p>Universidade Prebisteriana Mackenzie</p>
+					</div>
+				</div>
+			</div>
+			<div id="sidebar">
+				<div class="block">
+					<h3>Informa&ccedil;&otilde;es</h3>
+					<div class="content">
+						<p>......</p>
+					</div>
+				</div>
+				<div class="block notice">
+					<h4>Calendario</h4>
+					<p:calendar mode="inline" id="inlineCal" />
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

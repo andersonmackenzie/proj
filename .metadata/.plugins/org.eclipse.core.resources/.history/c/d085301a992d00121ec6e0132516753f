@@ -1,0 +1,165 @@
+package managedbean;
+
+import java.util.List;
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
+
+import clienterepositorio.AreaAtuacaoRepositorio;
+import clienterepositorio.CurriculoCursosRepositorio;
+import clienterepositorio.CurriculoRepositorio;
+import clienterepositorio.CursosRepositorio;
+import clienterepositorio.EnderecoRepositorio;
+import clienterepositorio.UniversidadeRepositorio;
+import clienterepositorio.UsuarioRepositorio;
+import br.com.entidade.AreaAtuacao;
+import br.com.entidade.Curriculo;
+import br.com.entidade.CurriculoCursos;
+import br.com.entidade.Curso;
+import br.com.entidade.Endereco;
+import br.com.entidade.Universidade;
+import br.com.entidade.Usuario;
+
+@ManagedBean
+@RequestScoped
+public class CadastroCurriculoMB {
+	@EJB
+	private UsuarioRepositorio reposUser;
+	@EJB
+	private AreaAtuacaoRepositorio areaRepositorio;
+	@EJB
+	private UniversidadeRepositorio universidadeRepositorio;
+
+	@EJB
+	private CurriculoCursosRepositorio curriculoCursosRepositorio;
+
+	@EJB
+	private CursosRepositorio cursoRepositorio;
+
+	@EJB
+	private CurriculoRepositorio curriculoRepositorio;
+
+	private Usuario usuario = new Usuario();
+
+	private Curriculo curriculo = new Curriculo();
+
+	private List<Usuario> usuarioCache;
+
+	private List<AreaAtuacao> listaAreas;
+
+	private List<Universidade> listaUniversidade;
+
+	private List<Curso> listaCursos;
+
+	private CurriculoCursos curriculoCurso = new CurriculoCursos();
+
+	private int usuarioId;
+
+	public CadastroCurriculoMB() {
+		 Usuario session = (Usuario) FacesContext.getCurrentInstance()
+		 .getExternalContext().getSessionMap().get("usuario");
+		 usuarioId = session.getCodUsuario();
+		this.usuario = session;
+
+	}
+
+	public String adiciona() {
+		System.out.println(usuario.toString());
+
+		reposUser.atualiza(this.usuario);
+		usuario = new Usuario();
+		this.setUsuarioCache(null);
+		this.listaAreas = null;
+		this.listaUniversidade = null;
+		return "cadastro-curriculo.xhtml?faces-redirect=true";
+	}
+
+	public String adicionaCursos() {
+		System.out.println("-----------");
+		System.out.println(this.usuario.getCodUsuario());
+
+		this.usuario.getCurriculo().getCursos().add(curriculoCurso);
+		// curriculoCursosRepositorio.adiciona(curriculoCurso);
+
+		// curriculoRepositorio.atualiza(this.curriculo);
+
+		// usuario = new Usuario();
+		curriculoCurso = new CurriculoCursos();
+
+		listaCursos = null;
+		return "cadastro-curriculo.xhtml?faces-redirect=true";
+	}
+
+	public Usuario getUsuario() {
+		System.out.println("Dentro do GetUsuario" + usuario.toString());
+		if (usuario.getCodUsuario() != 1)
+			usuario = reposUser.getUsuario(1);
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public List<Usuario> getUsuarioCache() {
+		if (this.usuarioCache == null) {
+			this.usuarioCache = this.reposUser.getLista();
+		}
+		return this.usuarioCache;
+	}
+
+	public void setUsuarioCache(List<Usuario> usuarioCache) {
+		this.usuarioCache = usuarioCache;
+	}
+
+	public List<AreaAtuacao> getListaAreas() {
+		if (listaAreas == null)
+			listaAreas = areaRepositorio.getListaArea();
+		return listaAreas;
+	}
+
+	public void setListaAreas(List<AreaAtuacao> listaAreas) {
+		this.listaAreas = listaAreas;
+	}
+
+	public List<Universidade> getListaUniversidade() {
+		if (listaUniversidade == null)
+			listaUniversidade = universidadeRepositorio.getLista();
+		return listaUniversidade;
+	}
+
+	public void setListaUniversidade(List<Universidade> listaUniversidade) {
+		this.listaUniversidade = listaUniversidade;
+	}
+
+	public CurriculoCursos getCurriculoCurso() {
+		return curriculoCurso;
+	}
+
+	public void setCurriculoCurso(CurriculoCursos curriculoCurso) {
+		this.curriculoCurso = curriculoCurso;
+	}
+
+	public List<Curso> getListaCursos() {
+		if (listaCursos == null)
+			listaCursos = cursoRepositorio.getLista();
+		return listaCursos;
+	}
+
+	public void setListaCursos(List<Curso> listaCursos) {
+		this.listaCursos = listaCursos;
+	}
+
+	public Curriculo getCurriculo() {
+		if (curriculo.getIdCurriculo() != this.usuario.getCurriculo()
+				.getIdCurriculo())
+			curriculo = this.usuario.getCurriculo();
+		return curriculo;
+	}
+
+	public void setCurriculo(Curriculo curriculo) {
+		this.curriculo = curriculo;
+	}
+
+}

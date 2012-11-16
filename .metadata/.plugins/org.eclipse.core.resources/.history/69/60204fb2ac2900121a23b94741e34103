@@ -1,0 +1,135 @@
+package br.com.View;
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.PropertyVetoException;
+import java.util.List;
+
+import javax.naming.InitialContext;
+import javax.swing.JButton;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.event.InternalFrameEvent;
+import javax.swing.event.InternalFrameListener;
+
+import br.com.Facade.AreaAtuacaoFacate;
+import br.com.entidade.AreaAtuacao;
+
+public class JListaArea extends JInternalFrame implements ActionListener,
+		InternalFrameListener {
+
+	private static final long serialVersionUID = 1L;
+
+	// Janela principal
+	private Menu telaPrincipal;
+	private Button bt;
+	private JPanel panel;
+	private static JListaArea singleton;
+	private JTextField jtf_nome;
+	private JButton incluir;
+	private JButton limpar;
+	private JTable table;
+	private JScrollPane jsp;
+	private JPanel main;
+	private JPanel dados;
+	private JPanel tableDados;
+	private AreaAtuacaoFacate area;
+	private List<AreaAtuacao> lista;
+
+	private JListaArea(String titulo, Menu telaPrincipal) {
+		super("Adição Área de atuação", true, true, true, true);
+
+		this.telaPrincipal = telaPrincipal;
+		area = new AreaAtuacaoFacate();
+		panel = new JPanel();
+
+		setBounds(100, 100, 403, 212);
+		getContentPane().setLayout(null);
+
+		JLabel lblNewLabel = new JLabel("Nome");
+		lblNewLabel.setBounds(173, 21, 46, 19);
+		getContentPane().add(lblNewLabel);
+
+		
+		
+
+	
+
+		addInternalFrameListener(this);
+
+		add(panel);
+		telaPrincipal.jdPane.add(this);
+
+		setBounds(100, 100, 403, 212);
+		setVisible(true);
+		setResizable(false);
+		setMaximizable(false);
+
+	}
+
+	// Errado refazer
+	public static JListaArea getInstance(String titulo, Menu telaPrincipal) {
+		if (singleton == null)
+			return new JListaArea(titulo, telaPrincipal);
+		else
+			return singleton;
+	}
+
+	@Override
+	public void internalFrameOpened(InternalFrameEvent e) {
+
+	}
+
+	@Override
+	public void internalFrameClosing(InternalFrameEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void internalFrameClosed(InternalFrameEvent e) {
+		System.out.println("fechado");
+
+	}
+
+	@Override
+	public void internalFrameIconified(InternalFrameEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void internalFrameDeiconified(InternalFrameEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void internalFrameActivated(InternalFrameEvent e) {
+		// panel.setBackground(Color.YELLOW);
+
+	}
+
+	@Override
+	public void internalFrameDeactivated(InternalFrameEvent e) {
+		// panel.setBackground(Color.YELLOW);
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

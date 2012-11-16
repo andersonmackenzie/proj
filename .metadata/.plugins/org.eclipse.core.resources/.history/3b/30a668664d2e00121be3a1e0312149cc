@@ -1,0 +1,16 @@
+package teste;
+
+import javax.swing.JFrame;
+
+public class TesteDaJanela extends JFrame {
+
+	public TesteDaJanela() {
+		super();
+
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

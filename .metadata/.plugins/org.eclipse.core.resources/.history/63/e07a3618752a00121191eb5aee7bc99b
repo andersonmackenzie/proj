@@ -1,0 +1,87 @@
+package br.com.View;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.table.AbstractTableModel;
+
+import br.com.entidade.Universidade;
+
+public class MinhaTableModel extends AbstractTableModel {
+	private String[] tituloColunas;
+	private List<Universidade> lista;
+
+	public MinhaTableModel(String[] tituloColunas) {
+		this.tituloColunas = tituloColunas;
+		this.lista = new ArrayList<Universidade>();
+
+	}
+
+	
+
+	@Override
+	public int getColumnCount() {
+		return 2;
+	}
+
+	/**
+	 * @return retorna o n�mero de linhas da table
+	 */
+	@Override
+	public int getRowCount() {
+		return lista.size();
+	}
+
+	/**
+	 * @return retorna o objeto na que est� na posi��o linha x coluna passados
+	 *         como par�metro
+	 */
+	@Override
+	public Object getValueAt(int linha, int coluna) {
+		Universidade uni = lista.get(linha);
+
+		switch (coluna) {
+		case 1:
+			return uni.getId();
+
+		case 2:
+			return uni.getNome();
+
+		default:
+			return null;
+		}
+
+	}
+	 @Override  
+	    public String getColumnName(int column){  
+	          
+	        if(column == this.COLUNA_NOME_ARTISTA){  
+	              
+	            return "Nome";  
+	              
+	        }  
+	          
+	        if(column == this.COLUNA_NOME_GENERO){  
+	              
+	            return "Genero";  
+	              
+	        }  
+	          
+	        if(column == this.COLUNA_NOME_MUSICA){  
+	              
+	            return "Música";  
+	              
+	        }  
+	          
+	        return null;  
+	          
+	    }  
+
+	/**
+	 * seta o valor o da linha x coluna com o objeto passado
+	 */
+	public void setValueAt(Object valor, int linha, int coluna) {
+		data[linha][coluna] = valor.toString();
+		fireTableCellUpdated(linha, coluna);
+	}
+}

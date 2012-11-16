@@ -1,0 +1,163 @@
+package br.com.View;
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.PropertyVetoException;
+
+import javax.naming.InitialContext;
+import javax.swing.JButton;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.event.InternalFrameEvent;
+import javax.swing.event.InternalFrameListener;
+
+import br.com.Facade.AreaAtuacaoFacate;
+import br.com.entidade.AreaAtuacao;
+
+public class Tela5 extends JInternalFrame implements ActionListener,
+		InternalFrameListener {
+
+	private static final long serialVersionUID = 1L;
+
+	// Janela principal
+	private Menu telaPrincipal;
+	private Button bt;
+	private JPanel panel;
+	private static Tela5 singleton;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	private JScrollPane jsp;
+	private JPanel main;
+	private JPanel dados;
+	private JPanel tableDados;
+	
+	private Tela5(String titulo, Menu telaPrincipal) {
+		super("Adição Área de atuação", true, true, true, true);
+
+		this.telaPrincipal = telaPrincipal;
+
+		panel = new JPanel();
+
+		setBounds(100, 100, 403, 212);
+		getContentPane().setLayout(null);
+
+		
+		main = new JPanel();
+		dados = new JPanel(new GridLayout(4, 2));
+		tableDados = new JPanel();
+		jsp = new JScrollPane();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		JLabel lblNewLabel = new JLabel("Nome");
+		lblNewLabel.setBounds(173, 21, 46, 19);
+		getContentPane().add(lblNewLabel);
+
+		textField = new JTextField();
+		textField.setBounds(96, 52, 201, 19);
+		getContentPane().add(textField);
+		textField.setColumns(1);
+
+		JButton btnNewButton = new JButton("Adicionar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				AreaAtuacao area = new AreaAtuacao();
+				area.setNomeArea(textField.getText().toString());
+				System.out.println(textField.getText().toString());
+				new AreaAtuacaoFacate().adiciona(area);
+				JOptionPane.showMessageDialog(null, "Contato adicionado");
+				dispose();
+			}
+
+		});
+		btnNewButton.setBounds(138, 95, 117, 25);
+		getContentPane().add(btnNewButton);
+
+		addInternalFrameListener(this);
+
+		add(panel);
+		telaPrincipal.jdPane.add(this);
+
+	
+		setVisible(true);
+		setResizable(false);
+		setMaximizable(false);
+
+	}
+
+	// Errado refazer
+	public static Tela5 getInstance(String titulo, Menu telaPrincipal) {
+		if (singleton == null)
+			return new Tela5(titulo, telaPrincipal);
+		else
+			return singleton;
+	}
+
+	@Override
+	public void internalFrameOpened(InternalFrameEvent e) {
+
+	}
+
+	@Override
+	public void internalFrameClosing(InternalFrameEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void internalFrameClosed(InternalFrameEvent e) {
+		System.out.println("fechado");
+
+	}
+
+	@Override
+	public void internalFrameIconified(InternalFrameEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void internalFrameDeiconified(InternalFrameEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void internalFrameActivated(InternalFrameEvent e) {
+		// panel.setBackground(Color.YELLOW);
+
+	}
+
+	@Override
+	public void internalFrameDeactivated(InternalFrameEvent e) {
+		// panel.setBackground(Color.YELLOW);
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

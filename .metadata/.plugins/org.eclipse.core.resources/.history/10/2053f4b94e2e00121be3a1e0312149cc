@@ -1,0 +1,25 @@
+package teste;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class TesteDaJanela extends JFrame {
+
+	public TesteDaJanela() {
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		panel.setLayout(new FlowLayout());
+		panel.add(new JLabel("Nome"));
+		
+		frame.setLayout(new FlowLayout());
+
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

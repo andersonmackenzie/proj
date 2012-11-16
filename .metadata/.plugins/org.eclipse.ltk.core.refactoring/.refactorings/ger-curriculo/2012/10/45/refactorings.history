@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;CursosRepositorioImplement.java&apos; to &apos;ger-curriculo/ejbModule/clienterepositorio&apos;&#x0A;- Original project: &apos;ger-curriculo&apos;&#x0A;- Destination element: &apos;ger-curriculo/ejbModule/clienterepositorio&apos;&#x0A;- Original element: &apos;clienterepositorio.CursosRepositorioImplement.java&apos;" description="Copy compilation unit" destination="/ejbModule&lt;clienterepositorio" element1="/ejbModule&lt;clienterepositorio{CursosRepositorioImplement.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1351684995643" units="1" version="1.0"/>
+</session>

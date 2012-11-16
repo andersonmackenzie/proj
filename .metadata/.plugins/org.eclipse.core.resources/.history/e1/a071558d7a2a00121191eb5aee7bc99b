@@ -1,0 +1,79 @@
+package br.com.tableModel;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.table.AbstractTableModel;
+
+import br.com.entidade.Universidade;
+
+public class UniTableModel extends AbstractTableModel {
+	
+	private String[] tituloColunas;
+	private List<Universidade> lista;
+
+	public UniTableModel(String[] tituloColunas) {
+		this.tituloColunas = tituloColunas;
+		this.lista = new ArrayList<Universidade>();
+
+	}
+
+	public String getColumnName(int col) {
+		return tituloColunas[col];
+	}
+
+	@Override
+	public int getColumnCount() {
+		return 2;
+	}
+
+	/**
+	 * @return retorna o n�mero de linhas da table
+	 */
+	@Override
+	public int getRowCount() {
+		return lista.size();
+	}
+
+	/**
+	 * @return retorna o objeto na que est� na posi��o linha x coluna passados
+	 *         como par�metro
+	 */
+	@Override
+	public Object getValueAt(int linha, int coluna) {
+		Universidade uni = lista.get(linha);
+
+		switch (coluna) {
+		case 1:
+			return uni.getId();
+
+		case 2:
+			return uni.getNome();
+
+		default:
+			return null;
+		}
+
+	}
+
+	// public void setValueAt(Object valor, int linha, int coluna) {
+	// data[linha][coluna] = valor.toString();
+	// fireTableCellUpdated(linha, coluna);
+	// }
+
+	public void addLista(List<Universidade> list) {
+		this.lista = list;
+		this.fireTableDataChanged();
+
+	}
+
+	public Universidade getUniversidade(int linha) {
+		if (this.lista.size() > 0) {
+			return this.lista.get(linha);
+		} else {
+			return null;
+		}
+
+	}
+
+}

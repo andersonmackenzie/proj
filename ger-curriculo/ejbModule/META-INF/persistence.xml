@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    version="2.0"
+    xmlns="http://java.sun.com/xml/ns/persistence"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" >
+
+    <persistence-unit
+        name="teste"
+        transaction-type="JTA" >
+        <provider>oracle.toplink.essentials.PersistenceProvider</provider>
+        <jta-data-source>jdbc/projeto</jta-data-source>
+		
+		<class>br.com.entidade.AreaAtuacao</class>
+        <class>br.com.entidade.CandidatoVaga</class>
+        <class>br.com.entidade.Curriculo</class>
+        <class>br.com.entidade.CurriculoCursos</class>
+        <class>br.com.entidade.CurriculoEmpresa</class>
+        <class>br.com.entidade.Curso</class>
+        <class>br.com.entidade.Empresa</class>
+        <class>br.com.entidade.Endereco</class>
+        <class>br.com.entidade.EnderecoEmpresa</class>
+        <class>br.com.entidade.Login</class>
+        <class>br.com.entidade.Telefone</class>
+        <class>br.com.entidade.TelefoneEmpresa</class>
+        <class>br.com.entidade.TipoDeTelefone</class>
+        <class>br.com.entidade.TipoLogin</class>
+        <class>br.com.entidade.Login</class>
+        <class>br.com.entidade.Universidade</class>
+        <class>br.com.entidade.Usuario</class>
+        <class>br.com.entidade.Vagas</class>
+        <!--
+        <properties>
+            <property
+                name="hibernate.show_sql"
+                value="true" />
+            <property
+                name="hibernate.format_sql"
+                value="true" />
+            <property
+                name="hibernate.hbm2ddl.auto"
+                value="update" />
+            <property
+                name="hibernate.dialect"
+                value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+        </properties>
+        -->
+    </persistence-unit>
+</persistence>

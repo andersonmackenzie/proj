@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>Gerenciador de Curriculos</title>
+	<link rel="stylesheet" href="stylesheets/base.css" type="text/css"
+		media="screen" />
+	<link rel="stylesheet" href="stylesheets/themes/default/style.css"
+		type="text/css" media="screen" />
+
+
+</h:head>
+<h:body>
+	<div id="container">
+		<div id="header">
+			<h1 style="text-align: center; color: blue;">
+				<h:outputText value="Gerenciamento de
+				Empresas" />
+			</h1>
+			<div id="user-navigation">
+				<ul class="wat-cf">
+
+					<li><a class="logout" href="#">Logout</a></li>
+				</ul>
+			</div>
+			<div id="main-navigation">
+				<br /> <br />
+			</div>
+		</div>
+		<div id="wrapper" class="wat-cf">
+			<div id="main">
+
+
+				<div class="block" id="block-text">
+					<div class="secondary-navigation">
+						<ul class="wat-cf">
+							<li><h:link value="Tipo de Login"
+									outcome="paginas-admin/tipo-login-cad.xhtml" /></li>
+							<li><h:link value="Area Atuação"
+									outcome="paginas-admin/area-atuacao-cad.xhtml" /></li>
+							<li><h:link value="Cursos"
+									outcome="paginas-admin/curso-cad.xhtml" /></li>
+							<li><h:link value="Login" outcome="login.xhtml" /></li>
+							<li><a href="#block-forms-2">item 5</a></li>
+							<li><a href="#block-lists">item 6</a></li>
+						</ul>
+					</div>
+
+
+					<div class="content" style="height: 400px">
+						<h1 style="size: 50px">Não logado</h1>
+					
+					</div>
+				</div>
+
+
+				<div id="footer">
+					<div class="block">
+						<p>
+							<h:outputText value="Universidade Prebisteriana Mackenzie" />
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id="sidebar">
+				<div class="block">
+					<h3>Informa&ccedil;&otilde;es</h3>
+					<div class="content">
+						<p>......</p>
+					</div>
+				</div>
+				<div class="block notice" align="center">
+					<h4>Calendario</h4>
+					<p:calendar mode="inline" id="inlineCal" style="a" />
+				</div>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>
+

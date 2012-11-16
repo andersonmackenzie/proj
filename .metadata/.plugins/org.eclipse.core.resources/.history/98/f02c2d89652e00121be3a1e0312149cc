@@ -1,0 +1,100 @@
+package br.com.tableModel;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.AbstractTableModel;
+import br.com.entidade.AreaAtuacao;
+
+public class AreaAtuacaoTableModel extends AbstractTableModel {
+
+	
+	private static final long serialVersionUID = 1L;
+	private String[] tituloColunas;
+	private List<AreaAtuacao> lista;
+
+	public AreaAtuacaoTableModel(String[] tituloColunas, List<AreaAtuacao> lista) {
+
+		// System.out.println("---------------");
+		// for (Universidade e : lista)
+		// System.out.println(e.getNome());
+		// System.out.println("---------------");
+
+		this.tituloColunas = tituloColunas;
+		this.lista = new ArrayList<AreaAtuacao>(lista);
+
+	}
+
+	public String getColumnName(int col) {
+		return tituloColunas[col];
+	}
+
+	@Override
+	public int getColumnCount() {
+		return 2;
+	}
+
+	/**
+	 * @return retorna o numero de linhas da table
+	 */
+	@Override
+	public int getRowCount() {
+		return lista.size();
+	}
+
+	/**
+	 * @return retorna o objeto na que esta na posicao linha x coluna passados
+	 *         como parametro
+	 */
+	@Override
+	public Object getValueAt(int linha, int coluna) {
+
+		System.out.println("getValueAt");
+
+		System.out.println("Valor da linha " + linha + " Valor coluna "
+				+ coluna);
+
+		AreaAtuacao area = lista.get(linha);
+
+		switch (coluna) {
+		case 0:
+			System.out.println(area.getCodTipo());
+
+			return area.getCodTipo();
+
+		case 1:
+			System.out.println("Linha " + area.getNome());
+			return area.getNome();
+
+		default:
+			return null;
+		}
+
+	}
+
+	// public void setValueAt(Object valor, int linha, int coluna) {
+	// data[linha][coluna] = valor.toString();
+	// fireTableCellUpdated(linha, coluna);
+	// }
+
+	public void addLista(List<AreaAtuacao> list) {
+		this.lista = list;
+		this.fireTableDataChanged();
+
+	}
+
+	public AreaAtuacao getAreaAtuacao(int linha) {
+		if (this.lista.size() > 0) {
+			return this.lista.get(linha);
+		} else {
+			return null;
+		}
+
+	}
+
+	
+	public void setValueAt(Object valor, int linha, int coluna) {
+		// data[linha][coluna]=valor.toString();
+		// fireTableCellUpdated(linha, coluna);
+	}
+
+}

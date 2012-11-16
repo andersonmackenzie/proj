@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ger-curriculo">
+        <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
+        <property name="java-output-path" value="/ger-curriculo/build/classes"/>
+        <property name="ClientProject" value="ger-curriculoClient"/>
+        <property name="ClientJARURI" value="ger-curriculoClient.jar"/>
+    </wb-module>
+</project-modules>

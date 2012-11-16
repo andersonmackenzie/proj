@@ -1,0 +1,3 @@
+INDEX VERSION 1.126
+/local/Diversos/proj/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4120462665.index
+/pers-aluno/src

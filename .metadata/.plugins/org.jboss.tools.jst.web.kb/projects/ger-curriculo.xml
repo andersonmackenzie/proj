@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects>
+  <project name="ger-curriculoClient"/>
+ </depends-on-projects>
+ <used-by-projects>
+  <project name="ger-curriculoWeb"/>
+ </used-by-projects>
+ <paths>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/org.eclipse.persistence.jpa.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/weld-osgi-bundle.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.enterprise.deploy.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/webservices-extra-jdk-packages.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/glassfish-api.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.security.jacc.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/jersey-gf-server.jar">
+   <libraries>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jersey-gf-server.jar/META-INF/taglib.tld" project="ger-curriculo"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jersey-gf-server.jar/META-INF/taglib.tld" project="ger-curriculo"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/jersey-client.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/jsf-impl.jar">
+   <libraries>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/META-INF/html_basic.tld" project="ger-curriculo"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/META-INF/jsf_core.tld" project="ger-curriculo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/META-INF/mojarra_ext.taglib.xml" project="ger-curriculo"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/META-INF/mojarra_ext.tld" project="ger-curriculo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/com/sun/faces/metadata/taglib/composite.taglib.xml" project="ger-curriculo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/com/sun/faces/metadata/taglib/facelets_jsf_core.taglib.xml" project="ger-curriculo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/com/sun/faces/metadata/taglib/html_basic.taglib.xml" project="ger-curriculo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/com/sun/faces/metadata/taglib/jstl-core.taglib.xml" project="ger-curriculo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/com/sun/faces/metadata/taglib/jstl-fn.taglib.xml" project="ger-curriculo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/com/sun/faces/metadata/taglib/mojarra_ext.taglib.xml" project="ger-curriculo"/>
+    </library>
+    <library class="facelet">
+     <id class="model-object"
+      path="FileSystems/lib-jsf-impl.jar/com/sun/faces/metadata/taglib/ui.taglib.xml" project="ger-curriculo"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/webservices.security.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.management.j2ee.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/org.eclipse.persistence.jpa.modelgen.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/jaxb-osgi.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/woodstox-osgi.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.jms.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/endorsed/javax.annotation.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.servlet.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/org.eclipse.persistence.oracle.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/webservices-connector.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.transaction.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/webservices-osgi.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/jstl-impl.jar">
+   <libraries>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/c-1_0-rt.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/c-1_0.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/c.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/fmt-1_0-rt.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/fmt-1_0.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/fmt.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/fn.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/permittedTaglibs.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/scriptfree.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/sql-1_0-rt.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/sql-1_0.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/sql.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/x-1_0-rt.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/x-1_0.tld" project="ger-curriculoClient"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jstl-impl.jar/META-INF/x.tld" project="ger-curriculoClient"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/grizzly-websockets.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.resource.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.servlet.jsp.jstl.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.mail.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/mq/lib/jaxm-api.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/org.eclipse.persistence.core.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/jsf-api.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.security.auth.message.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.persistence.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/org.eclipse.persistence.asm.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/bean-validator.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/jersey-multipart.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.servlet.jsp.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/endorsed/jaxb-api-osgi.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/org.eclipse.persistence.antlr.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/jersey-gf-statsproviders.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/jersey-core.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/grizzly-comet.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/javax.ejb.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/endorsed/webservices-api-osgi.jar"/>
+  <path value="/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/modules/jersey-json.jar"/>
+ </paths>
+ <validation>
+  <el/>
+ </validation>
+ <aliases/>
+</kb-project>

@@ -1,0 +1,50 @@
+package teste;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class TesteDaJanela extends JFrame {
+
+	public TesteDaJanela() {
+
+		JFrame frame = new JFrame();
+
+		JPanel panelNome = new JPanel();
+		panelNome.setLayout(new FlowLayout());
+		panelNome.add(new JLabel("Nome"));
+		JTextField txtNome = new JTextField(15);
+		panelNome.add(txtNome);
+
+		JPanel panelEmail = new JPanel();
+		panelEmail.setLayout(new FlowLayout());
+		panelEmail.add(new JLabel("Email"));
+		JTextField txtEmail = new JTextField(15);
+		panelEmail.add(txtEmail);
+
+		JPanel panelBotao = new JPanel();
+		panelBotao.setLayout(new FlowLayout());
+		
+		JButton botao = new JButton("Logar");
+		panelEmail.add(botao);
+
+		frame.setLayout(new FlowLayout());
+		frame.setSize(350, 250);
+		frame.add(panelNome);
+		frame.add(panelEmail);
+		frame.add(panelBotao);
+
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+
+	}
+
+	public static void main(String[] args) {
+		new TesteDaJanela();
+	}
+
+}

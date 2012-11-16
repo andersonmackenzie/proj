@@ -1,0 +1,46 @@
+package br.com.Facade;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import br.com.entidade.Login;
+
+import clienterepositorio.LoginRepositorio;
+
+public class LoginFacate {
+	List<Login> lista;
+
+	public void adiciona(Login area) {
+		InitialContext ctx;
+		try {
+			ctx = new InitialContext();
+			LoginRepositorio remote = (LoginRepositorio) ctx
+					.lookup("java:global/ger-curriculoEAR/ger-curriculo/LoginRepositorioImplement");
+
+			remote.adiciona(login);
+
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public List<Login> getLista() {
+		InitialContext ctx;
+		try {
+			ctx = new InitialContext();
+			UniversidadeRepositorio remote = (UniversidadeRepositorio) ctx
+					.lookup("java:global/ger-curriculoEAR/ger-curriculo/UniversidadeRepositorioImplement");
+
+			lista = remote.getLista();
+			for (Login item : lista)
+				System.out.println(item.getNome());
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+		return lista;
+	}
+}

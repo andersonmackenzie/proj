@@ -1,0 +1,3 @@
+#GlassFish 3
+#Wed Nov 14 14:04:01 BRST 2012
+org.eclipse.jst.jee.server\:ger-curriculoEAR=/local/Diversos/Servidores Web/16-10/glassfish3/glassfish/domains/domain1/eclipseApps/ger-curriculoEAR

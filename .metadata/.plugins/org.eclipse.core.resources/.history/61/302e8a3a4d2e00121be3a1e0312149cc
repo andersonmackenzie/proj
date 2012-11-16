@@ -1,0 +1,9 @@
+package teste;
+
+public class TesteDaJanela {
+
+	public static void main(String[] args) {
+
+	}
+
+}

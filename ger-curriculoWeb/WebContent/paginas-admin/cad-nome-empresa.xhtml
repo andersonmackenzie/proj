@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Gerenciador de Curriculos</title>
+	<link rel="stylesheet" href="../stylesheets/base.css" type="text/css"
+		media="screen" />
+	<link rel="stylesheet" href="../stylesheets/themes/default/style.css"
+		type="text/css" media="screen" />
+
+
+</h:head>
+<h:body>
+	<div id="container">
+		<div id="header">
+			<h1 style="text-align: center; color: blue;">Gerenciamento de
+				Curriculos</h1>
+			<div id="user-navigation">
+				<ul class="wat-cf">
+
+					<li><a class="logout" href="#">Logout</a></li>
+				</ul>
+			</div>
+			<div id="main-navigation">
+				<br /> <br />
+			</div>
+		</div>
+		<div id="wrapper" class="wat-cf">
+			<div id="main">
+
+				<div class="block" id="block-text">
+
+					<div class="secondary-navigation">
+						<ul class="wat-cf">
+							<li><h:link value="Tipo de Login"
+									outcome="tipo-login-cad.xhtml" /></li>
+							<li><h:link value="Area Atuação"
+									outcome="area-atuacao-cad.xhtml" /></li>
+							<li><h:link value="Cursos" outcome="curso-cad.xhtml" /></li>
+							<li><h:link value="Empresa" outcome="cad-nome-empresa.xhtml" /></li>
+							<li><a href="#block-forms-2">item 5</a></li>
+							<li><a href="#block-lists">item 6</a></li>
+						</ul>
+					</div>
+
+
+
+					<div class="content">
+						<h2 class="title" style="margin-top: 50px; text-align: center;">Gerenciamento
+							de Empresas</h2>
+						<div class="inner">
+
+
+
+							<div style="margin-bottom: 400px; text-align: center;">
+								<br /> <br />
+								<div align="center">
+									<h:form>
+										<p:panel id="cadEmpresa" header="Cadastro de Empresas">
+											<h:panelGrid columns="4" cellspacing="8" style="left: 50%; ">
+												<h:outputLabel value="Nome da Empresa: "
+													style="font-weight:bold" />
+												<p:inputText id="empresa" value="#{empresaMB.empresa.nome}" />
+												<h:outputLabel value="CNPJ: " style="font-weight:bold" />
+												<p:inputText id="cnpj" value="#{empresaMB.empresa.cnpj}" />
+
+												<p:commandButton action="#{empresaMB.adiciona}"
+													value="Inserir" />
+											</h:panelGrid>
+										</p:panel>
+									</h:form>
+								</div>
+								<h:form prependId="false">
+
+									<p:dataTable id="dataTable" var="item"
+										style="text-align: center;" value="#{empresaMB.empresas}">
+
+										<f:facet name="header">
+											<h:outputLabel value="Lista " />
+										</f:facet>
+
+										<p:column>
+											<f:facet name="header">
+												<h:outputLabel value="Codigo" />
+
+											</f:facet>
+
+											<h:outputText value="#{item.codEmpresa}" />
+
+										</p:column>
+
+										<p:column headerText="Nome">
+											<h:outputText value="#{item.nome}" />
+										</p:column>
+										<p:column headerText="CNPJ">
+											<h:outputText value="#{item.cnpj}" />
+										</p:column>
+
+										<f:facet name="footer">Quantidade Cadastros: #{empresaMB.empresas.size()}</f:facet>
+
+									</p:dataTable>
+
+								</h:form>
+
+
+
+
+
+
+							</div>
+							<br />
+						</div>
+					</div>
+				</div>
+
+
+				<div id="footer">
+					<div class="block">
+						<p>Universidade Prebisteriana Mackenzie</p>
+					</div>
+				</div>
+			</div>
+			<div id="sidebar">
+				<div class="block">
+					<h3>Informa&ccedil;&otilde;es</h3>
+					<div class="content">
+						<p>......</p>
+					</div>
+				</div>
+				<div class="block notice" align="center">
+					<h4>Calendario</h4>
+
+					<p:calendar mode="inline" id="inlineCal" />
+
+				</div>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>
+

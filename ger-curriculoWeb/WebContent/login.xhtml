@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Gerenciador de Curriculos</title>
+	<link rel="stylesheet" href="stylesheets/base.css" type="text/css"
+		media="screen" />
+	<link rel="stylesheet" href="stylesheets/themes/default/style.css"
+		type="text/css" media="screen" />
+
+
+</h:head>
+<h:body>
+
+	<div id="container">
+		<div id="header">
+			<h1 style="text-align: center; color: blue;">Gerenciador de
+				Curriculos</h1>
+		</div>
+		<div id="box">
+			<br /> <br />
+
+
+
+			<h:form id="formLogin" style="text-align: center;">
+				<p:panel header="Login ">
+					<div align="center"><br /><br /><br />
+						<h:panelGrid columns="2">
+
+							<h:outputLabel value="Usuario " />
+							<h:inputText id="usuario" value="#{logarMB.login.user}" />
+
+							<h:outputLabel value="Senha " />
+							<h:inputText id="senha" value="#{logarMB.login.senha}" />
+
+
+							<h:commandButton action="#{logarMB.verifica}" value="Logar" />
+
+						</h:panelGrid>
+						<br /> <br /> <br /> <br />
+					</div>
+
+
+
+
+				</p:panel>
+			</h:form>
+
+
+
+		</div>
+	</div>
+</h:body>
+</html>
+
